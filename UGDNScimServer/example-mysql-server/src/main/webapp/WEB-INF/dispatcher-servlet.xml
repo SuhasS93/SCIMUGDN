@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!--this is the required spring configuration file that is included within the scim-server-sdk jar-->
+    <import resource="classpath:opp-sdk-config.xml"/>
+
+    <!--MySql service example-->
+    <bean id="service" class="com.okta.scim.server.example.MySqlSCIMServiceImpl">
+        <property name="serverName" value="localhost"/>
+        <property name="serverPort" value="3306"/>
+
+        <property name="userName" value="oktasync"/>
+        <property name="password" value="oktasync0001"/>
+
+        <property name="databaseName" value="oktasync_prod"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,34 @@
+spring:
+   jpa:
+      hibernate:
+         ddl-auto: create
+         naming:
+            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+   properties:
+      javax:
+         persistence:
+            sharedCache:
+               mode: All
+   datasource:
+      url:  jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+      username: oktasync
+      password: oktasync01
+      driverClassName: com.mysql.cj.jdbc.Driver
+      hikari:
+            maximum-pool-size: 20
+            connectionTimeout: 30000
+            idleTimeout: 600000
+            maxLifetime: 600000
+            minimumIdle: 5
+            pool-name: app-pool
+            auto-commit: true
+            readOnly: true
+   h2:
+      console:
+         enabled: true
+         settings:
+            web-allow-others: true
+
+ugdn:
+  api:
+    url: https://appuat.uplonline.com/ugdn.sync.api/api/
